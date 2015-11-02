@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
+        <!-- Hoja de estilos / Theme Nuevo-->
+        <link rel="stylesheet" href="jquery/MyCRM.min.css" />
+        <link rel="stylesheet" href="jquery/jquery.mobile.icons.min.css" />
+
+        <!-- Hoja de estilos / CSS de JQuery Mobile-->
+        <!--<link rel="stylesheet" type="text/css" href="css/index.css" />-->
+        <link rel="stylesheet" href="./jquery/jquery.mobile.structure-1.4.5.min.css" />
+        <title>Mini CRM</title>
+    </head>
+    <body>
+        <div data-role = "page" id = "inicio" data-title = "Mini CRM">
+            <div data-role = "header">
+                <a href="./NuevoUsuario.html">Nuevo Usuario</a>
+                <h1>Inicio</h1>
+            </div>
+            
+            <div data-role = "main" class="ui-content" usuario>
+                <ul data-role="listview" >
+                    <li><a href="./DetJose.html"><img src="./img/user1.png" height="400" width="400">
+                        <div>Jose Igualada</div>
+                        <div>Estudiante</div>
+                        <div>Torrent</div>
+                        <div>21 años</div>
+                    </a></li>
+                </ul>
+            </div>
+
+            <div data-role = "main" class="ui-content" usuario>
+                <ul data-role="listview" >
+                    <li><a href="./DetJoaquin.html"><img src="./img/user2.png" height="800" width="800">
+                        <div>Joaquín Bahamonde</div>
+                        <div>Estudiante</div>
+                        <div>Catarroja</div>
+                        <div>21 años</div>
+                    </a></li>
+                </ul>
+            </div>
+
+            <div data-role = "main" class="ui-content" usuario>
+                <ul data-role="listview" >
+                    <li><a href="./DetIvan.html"><img src="./img/user4.png" height="800" width="800">
+                        <div>Ivan Estruch</div>
+                        <div>Estudiante</div>
+                        <div>Silla</div>
+                        <div>20 años</div>
+                    </a></li>
+                </ul>
+            </div>
+
+            <div data-role = "main" class="ui-content" usuario>
+                <ul data-role="listview" >
+                    <li><a href="./DetAdrian.html"><img src="./img/user5.png" height="800" width="800">
+                        <div>Adrian Rodriguez</div>
+                        <div>Estudiante</div>
+                        <div>Alfafar</div>
+                        <div>19 años</div>
+                    </a></li>
+                </ul>
+            </div>
+
+            <div data-role = "main" class="ui-content" usuario>
+                <ul data-role="listview" >
+                    <li><a href="./DetSilvia.html"><img src="./img/user3.png" height="800" width="800">
+                        <div>Silvia Reolid</div>
+                        <div>Estudiante</div>
+                        <div>Valencia</div>
+                        <div>30 años</div>
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+
+       <script type="text/javascript" src="jquery/jquery-1.11.3.min.js"></script> 
+        <script type="text/javascript" src="jquery/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
+</html>
