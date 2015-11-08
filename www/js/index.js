@@ -17,24 +17,67 @@
  * under the License.
  */
 
-var confDB = {
+var confDB = {    
+    existe_db:"",
+    db:"",
     initialize:function(){
-        var existe_db;
-        if(existe_db == null){
-            navigator.notification.confirm(
-                'La base de datos no existe',
-                this.onConfirm,
-                'Base de datos'
-                ['Crear', 'Salir']
-            );
+        this.existe_db = window.localStorage.getItem("existe_db");
+
+        //Creacion de la base de datos
+        this.db = window.openDatabase("CRMDB", "1.0", "Base de datos de MiniCRM", 2*1024*1024);
+        //Comprobacion de si existe_db 
+        if(this.existe_db == null){
+            console.log("No existe base de datos");
+            this.createDB();
         }
     },
 
-    onConfirm:function(buttonIndex){
-        if(buttonIndex == 1){
-            window.localStorage.setitem("existe_db", 1);
-        }
-    }
+    createDB:function(){
+        //CREAR BASE DE DATOS
+        console.log("Creando Base de Datos");
+        //transaccion
+        this.db.transaction(this.createCRMDB, this.createDBError, this.createDBSucc);
+    },
+
+    createCRMDB:function(tx){
+        console.log("Creando tabla...");
+
+        var sql = "CREATE TABLE IF NOT EXISTS CRMDB(id INTEGER PRIMARY KEY AUTOINCREMENT, nombreCompleto VARCHAR(45), rol VARCHAR(45),ciudad VARCHAR(45), edad INTEGER, twitter BOOLEAN, facebook BOOLEAN, google BOOLEAN, correoGmail VARCHAR(45), correoHotmail VARCHAR(45),telefono VARCHAR(9))";
+
+        tx.executeSql(sql);
+
+        //INSERCION DE DATOS
+
+        sql = "INSERT INTO CRMDB(id, nombreCompleto, rol, ciudad, edad, twitter, facebook, google, correoGmail, correoHotmail, telefono) VALUES (1, 'Jose Igualada', 'Estudiante', 'Torrent', 21, 1, 1, 1, 'joseigualada@gmail.com', 'joseigualada@hotmail.com', '676170946')";
+        tx.executeSql(sql);
+
+        /*
+        sql = "INSERT INTO CRMDB(id, nombreCompleto, rol, ciudad, edad, twitter, facebook, google, correoGmail, correoHotmail, telefono) VALUES " +
+        " (2, 'Joaquín Bahamonde', 'Estudiante', 'Catarroja', 21, 1, 1, 1, 'joaquinbahamonde@gmail.com', 'joaquinbahamonde@hotmail.com', '123456789');";
+        tx.executeSql(sql);
+
+        sql = "INSERT INTO CRMDB(id, nombreCompleto, rol, ciudad, edad, twitter, facebook, google, correoGmail, correoHotmail, telefono) VALUES " +
+        " (3, 'Ivan Estruch', 'Estudiante', 'Silla', 20, 1, 1, 1, 'ivanestruch@gmail.com', 'ivanestruch@hotmail.com', '987654321');";
+        tx.executeSql(sql);
+
+        sql = "INSERT INTO CRMDB(id, nombreCompleto, rol, ciudad, edad, twitter, facebook, google, correoGmail, correoHotmail, telefono) VALUES " +
+        " (4, 'Adrian Rodriguez', 'Estudiante', 'Alfafar', 19, 1, 1, 1, 'adrianrodriguez@gmail.com', 'adrianrodriguez@hotmail.com', '147852369');";
+        tx.executeSql(sql);
+
+        sql = "INSERT INTO CRMDB(id, nombreCompleto, rol, ciudad, edad, twitter, facebook, google, correoGmail, correoHotmail, telefono) VALUES " +
+        " (1, 'Silvia Reolid', 'Estudiante', 'Valencia', 26, 1, 1, 1, 'silviareolid@gmail.com', 'silviareolid@hotmail.com', '963258741');";
+        tx.executeSql(sql);
+        */
+    },
+
+    createDBError:function(err){
+        console.log("No se puede crear la Base de Datos: " + err.message);
+    },
+
+    createDBSucc:function(){
+        console.log("La Base de Datos ha sido creada con exito");
+        window.localStorage.setitem("existe_db", 1);
+    },
 };
 
 var app = {
@@ -68,7 +111,7 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
         */
 
-        console.log('Received Event: ' + id);        
+        //console.log('Received Event: ' + id);        
         confDB.initialize();
     }
 };
