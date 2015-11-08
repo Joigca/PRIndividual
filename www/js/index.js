@@ -51,23 +51,19 @@ var confDB = {
         sql = "INSERT INTO CRMDB(id, nombreCompleto, rol, ciudad, edad, twitter, facebook, google, correoGmail, correoHotmail, telefono) VALUES (1, 'Jose Igualada', 'Estudiante', 'Torrent', 21, 1, 1, 1, 'joseigualada@gmail.com', 'joseigualada@hotmail.com', '676170946')";
         tx.executeSql(sql);
 
-        /*
-        sql = "INSERT INTO CRMDB(id, nombreCompleto, rol, ciudad, edad, twitter, facebook, google, correoGmail, correoHotmail, telefono) VALUES " +
-        " (2, 'Joaquín Bahamonde', 'Estudiante', 'Catarroja', 21, 1, 1, 1, 'joaquinbahamonde@gmail.com', 'joaquinbahamonde@hotmail.com', '123456789');";
+
+        sql = "INSERT INTO CRMDB(id, nombreCompleto, rol, ciudad, edad, twitter, facebook, google, correoGmail, correoHotmail, telefono) VALUES (2, 'Joaquin Bahamode', 'Estudiante', 'Catarroja', 21, 1, 1, 1, 'joaquinbahamonde@gmail.com', 'joaquinbahamonde@hotmail.com', '123456789')";
         tx.executeSql(sql);
 
-        sql = "INSERT INTO CRMDB(id, nombreCompleto, rol, ciudad, edad, twitter, facebook, google, correoGmail, correoHotmail, telefono) VALUES " +
-        " (3, 'Ivan Estruch', 'Estudiante', 'Silla', 20, 1, 1, 1, 'ivanestruch@gmail.com', 'ivanestruch@hotmail.com', '987654321');";
+        sql = "INSERT INTO CRMDB(id, nombreCompleto, rol, ciudad, edad, twitter, facebook, google, correoGmail, correoHotmail, telefono) VALUES (3, 'Ivan Estruch', 'Estudiante', 'Silla', 20, 1, 1, 1, 'ivanestruch@gmail.com', 'ivanestruch@hotmail.com', '987654321')";
         tx.executeSql(sql);
 
-        sql = "INSERT INTO CRMDB(id, nombreCompleto, rol, ciudad, edad, twitter, facebook, google, correoGmail, correoHotmail, telefono) VALUES " +
-        " (4, 'Adrian Rodriguez', 'Estudiante', 'Alfafar', 19, 1, 1, 1, 'adrianrodriguez@gmail.com', 'adrianrodriguez@hotmail.com', '147852369');";
+        sql = "INSERT INTO CRMDB(id, nombreCompleto, rol, ciudad, edad, twitter, facebook, google, correoGmail, correoHotmail, telefono) VALUES (4, 'Adrian Rodriguez', 'Estudiante', 'Alfafar', 19, 1, 1, 1, 'adrianrodriguez@gmail.com', 'adrianrodriguez@hotmail.com', '963258741')";
         tx.executeSql(sql);
 
-        sql = "INSERT INTO CRMDB(id, nombreCompleto, rol, ciudad, edad, twitter, facebook, google, correoGmail, correoHotmail, telefono) VALUES " +
-        " (1, 'Silvia Reolid', 'Estudiante', 'Valencia', 26, 1, 1, 1, 'silviareolid@gmail.com', 'silviareolid@hotmail.com', '963258741');";
+        sql = "INSERT INTO CRMDB(id, nombreCompleto, rol, ciudad, edad, twitter, facebook, google, correoGmail, correoHotmail, telefono) VALUES (5, 'Silvia Reolid', 'Estudiante', 'Valencia', 26, 1, 1, 1, 'silviareolid@gmail.com', 'silviareolid@hotmail.com', '147852369')";
         tx.executeSql(sql);
-        */
+
     },
 
     createDBError:function(err){
