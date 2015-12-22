@@ -42,7 +42,7 @@ var confDB = {
     createCRMDB:function(tx){
         console.log("Creando tabla...");
 
-        var sql = "CREATE TABLE IF NOT EXISTS CRMDB(id INTEGER PRIMARY KEY AUTOINCREMENT, nombreCompleto VARCHAR(45), rol VARCHAR(45),ciudad VARCHAR(45), edad INTEGER, twitter BOOLEAN, facebook BOOLEAN, google BOOLEAN, correoGmail VARCHAR(45), correoHotmail VARCHAR(45),telefono VARCHAR(9))";
+        var sql = "CREATE TABLE IF NOT EXISTS CRMDB(id INTEGER PRIMARY KEY AUTOINCREMENT, nombreCompleto VARCHAR(45), rol VARCHAR(45),ciudad VARCHAR(45), edad INTEGER, twitter BOOLEAN, facebook BOOLEAN, google BOOLEAN, correoGmail VARCHAR(45), correoHotmail VARCHAR(45),telefono VARCHAR(9), ultimos INTEGER)";
 
         tx.executeSql(sql);
 
